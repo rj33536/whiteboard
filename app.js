@@ -5,6 +5,7 @@ const app = express();
 const httpServer = require('http').createServer(app);
 //  socket enbaled server
 const io = require('socket.io')(httpServer);
+app.use(express.static("client"))
 io.on("connection", function (socket) {
     console.log("New client connected");
     console.log(socket.id);
